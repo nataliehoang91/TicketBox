@@ -10,6 +10,7 @@ class User(db.Model):
   password_hash = db.Column(db.String(128), nullable=False)
   events = db.relationship('Event', backref='user', lazy=True)
   tickets=db.relationship('Ticket',backref='user', lazy=True)
+  orders=db.relationship('Order',backref='user', lazy=True)
 
 
 

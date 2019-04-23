@@ -10,8 +10,13 @@ db = SQLAlchemy(app)
 
 from src.models.event import Event
 from src.models.user import User
-from src.model.venue import Venue
-from src.model.images import Images
+from src.models.venue import Venue
+from src.models.images import Images
+from src.models.organizer import Organizer
+from src.models.ticket import Ticket
+from src.models.order import Order
+from src.models.tickettype import Tickettype
+
 
 migrate = Migrate(app, db)
 

@@ -1,10 +1,9 @@
 from src import db
 
 
-class TicketTypes(db.model):
+class Tickettype(db.Model):
     id=db.Column(db.Integer, primary_key=True)
-    ticket_type
-    event_id
-    expire_at
-    price
-    quota
+    ticket_type=db.Column(db.String,nullable=False)
+    tickets=db.relationship('Ticket', backref='tickettype', lazy=True)
+    price=db.Column(db.Integer, nullable=False)
+    quantity=db.Column(db.Integer,nullable=False)

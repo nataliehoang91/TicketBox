@@ -1,12 +1,12 @@
-form src import db
+from src import db
 
-class Venue(db.model):
+class Venue(db.Model):
 
-    __table__="venue"
+    __tablenameç__="venue"
     
     id=db.Column(db.Integer, primary_key=True)
-    venue_name=Column(db.String nullable=False)
-    location=db.Column(db.String nullable=False)
+    venue_name=db.Column(db.String, nullable=False)
+    location=db.Column(db.String, nullable=False)
     events = db.relationship('Event', backref='venue', lazy=True)
 
   
