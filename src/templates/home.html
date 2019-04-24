@@ -1,2 +1,78 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="bg-img text-right">
+<ul class="nav nav-pills ">
+    <li class="nav-item">
+        <a class="nav-link" href="#">Profile</a>
+    </li>
+    <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
+            aria-expanded="false">Menu</a>
+        <div class="dropdown-menu">
+            <a class="dropdown-item" href="#">Action</a>
+            <a class="dropdown-item" href="#">Another action</a>
+            <a class="dropdown-item" href="#">Something else here</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">Separated link</a>
+        </div>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="#">Link</a>
+    </li>
+<li>
+<button type="button" class="btn-create font-weight-bold" data-toggle="modal" data-target="#exampleModalLong">
+    + CREATE EVENTS
+</button>
 
-<h1>Hello</h1>
+<!-- Modal -->
+<div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Create Events</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+            <form class="border-input">
+                <div class="form-group ">
+                    <div class="input-wrapper">
+                        <input class="form-control spacing" type="text" placeholder="Please input Event Title">
+                        <label for="stuff" class="fas fa-pen input-icon"></label>
+                    </div>
+                    <div class="input-wrapper">
+                <input class="form-control spacing my-2" type="text" placeholder="Please input Event Venue">
+                        <label for="stuff" class="fas fa-building input-icon"></label>
+                    </div>
+                                        <div class="input-wrapper">
+<input class="form-control spacing mb-2" type="text" placeholder="Please input Venue Address">
+                                            <label for="stuff" class="fas fa-map-marked-alt input-icon"></label>
+                                        </div>
+                    <div class="input-wrapper">
+                        <select class="form-control spacing" id="exampleFormControlSelect1">
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
+                        </select>
+                        <label for="stuff" class="fas fa-th input-icon"></label>
+                    </div>
+                </div>
+                </form> 
+            </div>
+            <div class="modal-footer  text-center">
+                <button type="button" class="btn btn-primary">Create &#8680</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+</li>
+</ul>
+</div>
+
+{% endblock %}
+

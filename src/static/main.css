@@ -1,0 +1,56 @@
+.bg-img{
+background-image: url("covers.jpg");
+min-height: 380px;
+width:100%;
+background-position: center;
+background-repeat: no-repeat;
+background-size: cover;
+  
+  /* Needed to position the navbar */
+  position: relative;
+}
+
+.nav-pills .nav-link{
+    color:white!important;
+    background:none!important;
+}
+.nav-pills{
+ float: right !important;
+}
+.btn-create {
+  color:white!important;
+   background-color:rgba(1, 7, 11, 0.317)!important;
+border-color: white!important;
+}
+.modal-footer {
+    justify-content: center!important;
+    background-color: black !important;
+}
+
+.btn-primary{
+    border:none !important;
+    background: none !important;
+}
+.input-icon{
+  position: absolute;
+  left: 3px;
+  top: calc(50% - 0.5em); /* Keep icon in center of input, regardless of the input height */
+  margin-right:10px;
+}
+
+.input-wrapper{
+  position: relative;
+}
+.spacing{
+    padding-left:30px!important;
+}
+.border-input{
+border:solid rgb(0, 0, 2) 2px!important;
+
+}
+
+
+.modal-title{
+   align-items: center!important;
+
+}
