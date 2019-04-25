@@ -1,16 +1,108 @@
-<div>
-<h1>Add Event Here</h1>
-<form method="POST">
+{% extends "layout.html" %} 
+{% block content %}
+{{ form.hidden_tag() }}
+<h3>Create Event</h3>
+<div class="add-event-bg">
+  <form class="border-input" method="POST">
 
-    {{ form.hidden_tag() }}
-    {{ form.description.label }} {{form.description() }}
-    {{ form.organizer.label }} {{form.organizer() }}
-    {{ form.venue.label }} {{ form.venue() }}
-    {% for error in form.description.errors %}
-    <span>{{error}}</span>
-    {% endfor %}
-    {{form.submit()}}
-   
-</form>
+        
+      <div class="form-group ">
+        <h5>Title</h5>
+        <div class="input-wrapper my-2"> 
+                                    
+                    <div class="form-control spacing">
+    {{ form.title() }}
+                    </div>
+                    <label for="stuff" class="fas fa-pen input-icon"></label>
+                </div>
+                <h5>Description</h5>
+        <div class="input-wrapper my-2">
+          <div
+            class="form-control spacing">
+            
+ {{ form.description() }}
+        </div>
+          <label for="stuff" class="fas fa-pen input-icon"></label>
+        </div>
+        <h5>Venue Name</h5>
+        <div class="input-wrapper my-2">
+        <div class="form-control spacing">
+        
+    {{ form.venue() }}
+        </div>
+          <label for="stuff" class="fas fa-building input-icon"></label>
+        </div>
+        <h5>Location</h5>
+        <div class="input-wrapper my-2">
+        <div class="form-control spacing">
+        
+            {{ form.location() }}
+        </div>
+          <label for="stuff" class="fas fa-map-marked-alt input-icon"></label>
+        </div>
+        <div class="d-flex flex-row justify-content-between">
+    
+        <div class="input-wrapper">
+                <h5>Start time</h5>
+            <div class="form-control spacing">
+                
+                <input type="datetime-local" name="bdaytime">
+            </div>
+            <label for="stuff" class="fas fa-calendar-week input-icon extra"></label>
+        </div>
+       
+       
+        <div class="input-wrapper">
+            <h5>End time</h5>
+            <div class="form-control spacing mb-3">
+                
+                <input type="datetime-local" name="bdaytime">
+            </div>
+            <label for="stuff" class="fas fa-calendar-week input-icon extra"></label>
+        </div>
+        </div>
+        <div class="d-flex flex-row justify-content-between">
 
+<div class="input-wrapper">
+    <h5> Email</h5>
+    <input class="form-control spacing" type="text" >
+    <label for="stuff" class="fas fa-pen input-icon extra"></label>
 </div>
+
+<div class="input-wrapper">
+    <h5> Name</h5>
+    <input class="form-control spacing" type="text">
+    <label for="stuff" class="fas fa-pen input-icon extra"></label>
+</div>
+
+<div class="input-wrapper">
+    <h5> Phone number</h5>
+    <input class="form-control spacing" type="text">
+    <label for="stuff" class="fas fa-pen input-icon extra"></label>
+</div>
+</div>
+Event Type
+<p>{{ form.eventtype() }}</p>
+
+
+
+      </div>
+    {{ form.submit.label }} &#10140
+    {{ form.submit() }}
+    </form>
+
+
+    
+
+    <div class="WTF">
+    {% for error in form.errors %}
+      <span class="text-white">{{ error }}</span>
+      {% endfor %}
+    </div>
+    
+  </div>
+
+{% endblock %}
+<!-- <button type="button" class="btn btn-primary"></button> -->
+
+<!-- <p>{{ form.organizer.label }} {{ form.organizer() }}</p> -->

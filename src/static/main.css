@@ -43,6 +43,7 @@ border-color: white!important;
 }
 .spacing{
     padding-left:30px!important;
+   
 }
 .border-input{
 border:solid rgb(0, 0, 2) 2px!important;
@@ -53,4 +54,23 @@ border:solid rgb(0, 0, 2) 2px!important;
 .modal-title{
    align-items: center!important;
 
+}
+.date-time-icon{
+    margin-top:12px;
+}
+#description, #location, #venue_name, #title, #venue{
+  border:none!important;
+  width: 100%!important;
+}
+
+#submit{
+color:white!important;
+background-color:rgba(1, 7, 11, 0.317)!important;
+border-color: white!important;
+}
+body{
+background: linear-gradient(to left, rgb(36, 1, 43), #F8CDDA); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+.extra{
+  margin-top:20px !important;
 }

@@ -16,6 +16,7 @@ from src.models.images import Images
 from src.models.ticket import Ticket
 from src.models.order import Order
 from src.models.tickettype import Tickettype
+from src.models.type import Type
 
 
 migrate = Migrate(app, db)
