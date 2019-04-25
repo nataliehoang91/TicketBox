@@ -46,7 +46,7 @@
                 <h5>Start time</h5>
             <div class="form-control spacing">
                 
-                <input type="datetime-local" name="bdaytime">
+                <input type="datetime-local">
             </div>
             <label for="stuff" class="fas fa-calendar-week input-icon extra"></label>
         </div>
@@ -56,7 +56,7 @@
             <h5>End time</h5>
             <div class="form-control spacing mb-3">
                 
-                <input type="datetime-local" name="bdaytime">
+                <input type="datetime-local">
             </div>
             <label for="stuff" class="fas fa-calendar-week input-icon extra"></label>
         </div>
@@ -65,19 +65,26 @@
 
 <div class="input-wrapper">
     <h5> Email</h5>
-    <input class="form-control spacing" type="text" >
+
+<div class="form-control spacing">
+{{ form.email() }}
+</div>
     <label for="stuff" class="fas fa-pen input-icon extra"></label>
 </div>
 
 <div class="input-wrapper">
     <h5> Name</h5>
-    <input class="form-control spacing" type="text">
+    <div class="form-control spacing">
+        {{ form.name() }}
+    </div>
     <label for="stuff" class="fas fa-pen input-icon extra"></label>
 </div>
 
 <div class="input-wrapper">
     <h5> Phone number</h5>
-    <input class="form-control spacing" type="text">
+    <div class="form-control spacing">
+        {{ form.phonenumber }}
+    </div>
     <label for="stuff" class="fas fa-pen input-icon extra"></label>
 </div>
 </div>

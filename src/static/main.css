@@ -58,7 +58,7 @@ border:solid rgb(0, 0, 2) 2px!important;
 .date-time-icon{
     margin-top:12px;
 }
-#description, #location, #venue_name, #title, #venue{
+#description, #location, #venue_name, #title, #venue, #email, #name, #phonenumber{
   border:none!important;
   width: 100%!important;
 }

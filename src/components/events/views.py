@@ -28,7 +28,7 @@ def add():
         multi=[v,u]
         db.session.bulk_save_objects(multi)
         db.session.commit()
-        e=Event(title=form.title.data,description=form.description.data,organizer_id=form.u.id,venue_id=v.id,eventtype_id=t.id,end_time="2019-05-05 22:22:22", start_time="2019-04-04 22:22:22")
+        e=Event(title=form.title.data,description=form.description.data,organizer_id=u.id,venue_id=v.id,eventtype_id=t.id,end_time="2019-05-05 22:22:22", start_time="2019-04-04 22:22:22")
         db.session.add(e)
         db.session.commit()
         flash("ok")
