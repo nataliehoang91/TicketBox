@@ -1,87 +1,170 @@
-{% extends "layout.html" %}
-{% block content %}
+{% extends "layout.html" %} {% block content %}
+<header>
+  <div class="container">
+    <div class="row mt-3">
+      <div class="logo col-lg-3 col-md-3 col-sm-6 col-xs-6">
+        <img class="img-responsive" src="../static/logo.png" alt="image" />
+        <span class=" ml-3 text-white">EVENTS COMMUNITY</span>
 
-
-<div class="">
-    <ul class="nav nav-pills  ">
-        <li class="nav-item">
-            <a class="nav-link" href="#">Profile</a>
-        </li>
-        <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
-                aria-expanded="false">Menu</a>
-            <div class="dropdown-menu">
-                <a class="dropdown-item" href="#">Action</a>
-                <a class="dropdown-item" href="#">Another action</a>
-                <a class="dropdown-item" href="#">Something else here</a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#">Separated link</a>
-            </div>
-        </li>
-       
-        
-        <li class="nav-item">
-            <a class="nav-link" href="#">Link</a>
-        </li>
-        <li>
-            <button type="button" class="btn-create font-weight-bold" data-toggle="modal"
-                data-target="#exampleModalLong">
-                LOGIN
-            </button>
-            <a href="{{ url_for('events.add') }}" class="btn-create font-weight-bold"> + CREATE EVENTS</a>
-
-            <!-- Modal -->
-            <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog"
-                aria-labelledby="exampleModalLongTitle" aria-hidden="true">
-                <div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLongTitle">LOGIN</h5>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                        <div class="modal-body">
-                            <form class="border-input" method="POST">
-                                <div class="form-group ">
-                                    {{form.email.label}}
-                                    <div class="input-wrapper">
-                                        <!-- <input class="form-control spacing" type="text"
-                                            placeholder="Please input Event Title"> -->  
-                                        <div class="form-control spacing">
-                                            {{ form.email() }}
-                                        </div>
-                                        <label for="stuff" class="fas fa-pen input-icon"></label>
-                                    </div>
-                                    {{form.password_hash.label}}
-                                    <div class="input-wrapper">
-                                        <!-- <input class="form-control spacing my-2" type="text"
-                                            placeholder="Please input Event Venue">
-                                        <label for="stuff" class="fas fa-building input-icon"></label> -->
-                                <div class="form-control spacing">
-                                                                            {{form.password_hash()}}
-                                </div>
-
-                                <label for="stuff" class="fas fa-map-marked-alt input-icon"></label>
-                                    </div>
-
-
-                                </div>
-                                            <a href="{{ url_for('account.add') }}" > "Sign Up here if you don't have account yet" </a>
-                        <div class="modal-footer  text-center">
-                            <button type="button" class="btn btn-primary"> </button>{{form.submit()}}
-                        </div>
-                            </form>
-                        </div>
-
-                    </div>
+      </div>
+      <div class="col-lg-9 col-md-9 col-sm-6 col-xs-6">
+        <nav class="navbar navbar-expand-lg mainnav">
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-toggle="collapse"
+            data-target="#navbarTogglerDemo01"
+            aria-controls="navbarTogglerDemo01"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span> Navigation <i class="fas fa-bars"></i></span>
+          </button>
+          <div class="collapse navbar-collapse " id="navbarTogglerDemo01">
+            <ul class="nav nav-pills mainnav ">
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
+                    aria-expanded="false">MENU</a>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="#">PRICING</a>
+                    <a class="dropdown-item" href="#">SPONSOR</a>
+                    <a class="dropdown-item" href="#">CONTACT US</a>
+                    <div class="dropdown-divider"></div>
+                    <form class="form-inline my-2 my-lg-0">
+                        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                    </form>
                 </div>
-            </div>
+            </li>
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle"
+                  data-toggle="dropdown"
+                  href="#"
+                  role="button"
+                  aria-haspopup="true"
+                  aria-expanded="false"
+                  >NEWS</a
+                >
+                <div class="dropdown-menu">
+                  <a class="dropdown-item" href="#">Recently Added</a>
+                  <a class="dropdown-item" href="#">Most Viewed</a>
+                  <a class="dropdown-item" href="#">Highlights</a>
+                  <div class="dropdown-divider"></div>
+<form class="form-inline my-2 my-lg-0">
+    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
 
-        </li>
-    </ul>
-    
+</form>
+                </div>
+              </li>
+
+                            
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">GALLERY</a>
+                            </li>
+                            
+                                                        <li class="nav-item">
+                                                            <a class="nav-link" href="#">EVENTS</a>
+                                                        </li>
+              <li>
+                <button
+                  type="button"
+                  class="btn-create font-weight-bold"
+                  data-toggle="modal"
+                  data-target="#exampleModalLong"
+                >
+                  LOGIN
+                </button>
+                <a
+                  href="{{ url_for('events.add') }}"
+                  class="btn-create font-weight-bold"
+                >
+                  + CREATE EVENTS</a
+                >
+
+                <!-- Modal -->
+                <div
+                  class="modal fade"
+                  id="exampleModalLong"
+                  tabindex="-1"
+                  role="dialog"
+                  aria-labelledby="exampleModalLongTitle"
+                  aria-hidden="true"
+                >
+                  <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLongTitle">
+                          LOGIN
+                        </h5>
+                        <button
+                          type="button"
+                          class="close"
+                          data-dismiss="modal"
+                          aria-label="Close"
+                        >
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                      </div>
+                      <div class="modal-body">
+                        <form class="border-input" method="POST">
+                          <div class="form-group ">
+                            {{ form.email.label }}
+                            <div class="input-wrapper">
+                              <!-- <input class="form-control spacing" type="text"
+                                                    placeholder="Please input Event Title"> -->
+                              <div class="form-control spacing">
+                                {{ form.email() }}
+                              </div>
+                              <label
+                                for="stuff"
+                                class="fas fa-envelope input-icon"
+                              ></label>
+                           
+                            </div>
+                            {{ form.password_hash.label }}
+                            <div class="input-wrapper">
+                              <!-- <input class="form-control spacing my-2" type="text"
+                                                    placeholder="Please input Event Venue">
+                                                <label for="stuff" class="fas fa-building input-icon"></label> -->
+                              <div class="form-control spacing">
+                                {{ form.password_hash() }}
+                              </div>
+
+                              <label
+                                for="stuff"
+                                class="fas fa-lock input-icon"
+                              ></label>
+                            </div>
+                          </div>
+                          <a href="{{ url_for('account.add') }}">
+                            "Sign Up here if you don't have account yet"
+                          </a>
+                          <div class="modal-footer bg-img text-center">
+                            
+                            {{ form.submit() }}
+                          </div>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+    </div>
+  </div>
+</header>
+<div class="container text-center text-white mt-5">
+<h1>FIND YOUR FARVORITE EVENTS HERE</h1>
+<div class="wrap">
+    <div class="search">
+        <input type="text" class="searchTerm" placeholder="What are you looking for?">
+        <button type="submit" class="searchButton">
+            <i class="fa fa-search"></i>
+        </button>
+    </div>
 </div>
-
-
+</div>
 {% endblock %}

@@ -24,9 +24,7 @@ from src.models.user import User
 
 # def check_password(self, password):
 #       return check_password_hash(password_hash, password)
-@login_manager.user_loader
-def load_user(user_id):
-    return User.get(user_id)
+
 
 @signup_blueprint.route('/signup',methods=['POST','GET'])
 def add():
@@ -54,7 +52,7 @@ def login():
             login_user(user)
             session['username'] = user.username #user here being the user object you have queried
             print(user.username)
-    return render_template('/home.html',form=form)
+    return render_template('home.html',form=form)
         
      
 
