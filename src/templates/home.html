@@ -2,7 +2,7 @@
 {% block content %}
 
 
-<div class="text-right ">
+<div class="">
     <ul class="nav nav-pills  ">
         <li class="nav-item">
             <a class="nav-link" href="#">Profile</a>
@@ -26,7 +26,7 @@
         <li>
             <button type="button" class="btn-create font-weight-bold" data-toggle="modal"
                 data-target="#exampleModalLong">
-                + CREATE EVENTS
+                LOGIN
             </button>
             <a href="{{ url_for('events.add') }}" class="btn-create font-weight-bold"> + CREATE EVENTS</a>
 
@@ -36,36 +36,44 @@
                 <div class="modal-dialog" role="document">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLongTitle">Create Events</h5>
+                            <h5 class="modal-title" id="exampleModalLongTitle">LOGIN</h5>
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                             </button>
                         </div>
                         <div class="modal-body">
-                            <form class="border-input">
+                            <form class="border-input" method="POST">
                                 <div class="form-group ">
+                                    {{form.email.label}}
                                     <div class="input-wrapper">
-                                        <input class="form-control spacing" type="text"
-                                            placeholder="Please input Event Title">
+                                        <!-- <input class="form-control spacing" type="text"
+                                            placeholder="Please input Event Title"> -->  
+                                        <div class="form-control spacing">
+                                            {{ form.email() }}
+                                        </div>
                                         <label for="stuff" class="fas fa-pen input-icon"></label>
                                     </div>
+                                    {{form.password_hash.label}}
                                     <div class="input-wrapper">
-                                        <input class="form-control spacing my-2" type="text"
+                                        <!-- <input class="form-control spacing my-2" type="text"
                                             placeholder="Please input Event Venue">
-                                        <label for="stuff" class="fas fa-building input-icon"></label>
-                                    </div>
-                                    <div class="input-wrapper">
-                                        <input class="form-control spacing mb-2" type="text"
-                                            placeholder="Please input Venue Address">
-                                        <label for="stuff" class="fas fa-map-marked-alt input-icon"></label>
+                                        <label for="stuff" class="fas fa-building input-icon"></label> -->
+                                <div class="form-control spacing">
+                                                                            {{form.password_hash()}}
+                                </div>
+
+                                <label for="stuff" class="fas fa-map-marked-alt input-icon"></label>
                                     </div>
 
+
                                 </div>
+                                            <a href="{{ url_for('account.add') }}" > "Sign Up here if you don't have account yet" </a>
+                        <div class="modal-footer  text-center">
+                            <button type="button" class="btn btn-primary"> </button>{{form.submit()}}
+                        </div>
                             </form>
                         </div>
-                        <div class="modal-footer  text-center">
-                            <button type="button" class="btn btn-primary">Create &#10140</button>
-                        </div>
+
                     </div>
                 </div>
             </div>

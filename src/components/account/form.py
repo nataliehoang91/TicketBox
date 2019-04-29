@@ -1,5 +1,5 @@
 from flask_wtf import FlaskForm
-from wtforms import StringField, IntegerField,SubmitField,DateTimeField,SelectField,validators, TimeField
+from wtforms import StringField, IntegerField,SubmitField,DateTimeField,SelectField,validators, TimeField, PasswordField
 
 class SignUpForm(FlaskForm):
     username=StringField('Username: ',[validators.DataRequired(),validators.Length(min=6,max=16)])
@@ -11,6 +11,6 @@ class SignUpForm(FlaskForm):
 
 class LoginForm(FlaskForm):
     email=StringField("Email: ",[validators.DataRequired()])
-    password_hash=StringField("Password: ",[validators.DataRequired()])
+    password_hash=PasswordField("Password: ",[validators.DataRequired()])
     # starttime=DateField("Time", format='%Y-%m-%d')
     submit=SubmitField('Login' )

@@ -27,6 +27,16 @@ from src.models.order import Order
 from src.models.tickettype import Tickettype
 from src.models.type import Type
 
+from flask import  render_template, flash, redirect, url_for,request
+
+from flask_login import UserMixin, LoginManager,login_user,logout_user, current_user, login_required
+from flask import request
+from flask import session
+
+
+login_manager = LoginManager()
+login_manager.init_app(app)
+login_manager.login_view = 'login'
 
 migrate = Migrate(app, db)
 

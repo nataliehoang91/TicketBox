@@ -1,6 +1,11 @@
 from flask import Blueprint, render_template,request
 from src import db
 from datetime import datetime
+from flask import Flask, render_template, flash, redirect, url_for,request
+
+# from flask_login import UserMixin, LoginManager,login_user,logout_user, current_user, login_required
+# from flask import request
+# from flask import session
 # from DateTime import DateTime
 
 
@@ -22,6 +27,8 @@ def hello():
     return render_template('events.html',form=form) 
 
 @events_blueprint.route('/add',methods=['POST','GET'])
+
+
 def add():
     form=AddEventForm()
     
