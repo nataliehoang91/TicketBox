@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+{% block content %}
+{{ form.hidden_tag() }}
+<h3>Signup</h3>
+<div class="add-event-bg">
+    <form class="" method="POST">
+
+<p>
+{{ form.username.label }}
+    {{ form.username() }}
+</p>
+<p>
+{{ form.email.label}}
+{{ form.email() }}
+</p>
+
+<p>
+    {{ form.phonenumber.label}}
+    {{ form.phonenumber() }}
+</p>
+<p>
+    {{ form.password_hash.label}}
+    {{ form.password_hash() }}
+</p>
+
+{{form.submit}}
+{% endblock %}

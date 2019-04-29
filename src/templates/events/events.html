@@ -1,1 +1,9 @@
-<h1>Helloooooo</h1>
+{% extends "layout.html" %}
+{% block content %}
+
+{% for e in events %}
+<div>{{e.id}}</div>
+{% endfor %}
+
+
+{% endblock %}

@@ -1,5 +1,5 @@
 from flask_wtf import FlaskForm
-from wtforms import StringField, IntegerField,SubmitField,DateTimeField,SelectField,validators
+from wtforms import StringField, IntegerField,SubmitField,DateTimeField,SelectField,validators, TimeField
 
 class AddEventForm(FlaskForm):
     title=StringField('Event Title: ',[validators.DataRequired(),validators.Length(min=4,max=25)])
@@ -10,5 +10,5 @@ class AddEventForm(FlaskForm):
     name=StringField("Name: ",[validators.DataRequired()])
     phonenumber=StringField("Phone Number: ",[validators.DataRequired()])
     eventtype=SelectField('Type' ,coerce=int)
+    # starttime=DateField("Time", format='%Y-%m-%d')
     submit=SubmitField('Create' )
-    
