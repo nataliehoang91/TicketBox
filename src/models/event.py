@@ -10,6 +10,8 @@ class Event(db.Model):
     description = db.Column(db.Text, nullable=False)
     start_time=db.Column(db.DateTime)
     end_time=db.Column(db.DateTime)
+    img_link=db.Column(db.Text)
+    event_owner=db.Column(db.String)
     organizer_id = db.Column(db.Integer, db.ForeignKey('user.id'),
         nullable=False)
     venue_id = db.Column(db.Integer, db.ForeignKey('venue.id'),

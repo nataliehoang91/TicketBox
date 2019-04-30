@@ -50,9 +50,20 @@ def login():
         user=User.query.filter_by(email=email).first()
         if user is not None and check_password_hash(user.password_hash,password):
             login_user(user)
-            session['username'] = user.username #user here being the user object you have queried
+            session['username'] = user.username
+            
+ #user here being the user object you have queried
             print(user.username)
-    return render_template('home.html',form=form)
+    return render_template('home.html', form=form)
+
+
+@signup_blueprint.route('/logout')
+@login_required
+def logout():
+    logout_user()
+    del session['username']
+    return redirect('/')
+
         
      
 
