@@ -22,12 +22,12 @@ from src.models.type import Type
 from flask_login import UserMixin, LoginManager,login_user,logout_user, current_user, login_required
 from werkzeug.security import generate_password_hash, check_password_hash
 
-@events_blueprint.route('/')
+# @events_blueprint.route('/')
 
-def hello():
-    form=AddEventForm()
+# def hello():
+#     form=AddEventForm()
     
-    return render_template('events.html',form=form) 
+#     return render_template('events.html',form=form) 
 
 @events_blueprint.route('/add',methods=['POST','GET'])
 
@@ -41,21 +41,23 @@ def add():
     form.eventtype.choices=[(t.id,t.event_type) for t in Type.query.all()]
     if request.method == 'POST':
         v=Venue(venuename=form.venue.data,locationaddress=form.location.data)
-        u=User(email=form.email.data,username=form.name.data,phonenumber=form.phonenumber.data)
-        multi=[v,u]
+        
+        
         # db.session.bulk_save_objects(multi)
         db.session.add(v)
-        db.session.add(u)
+      
         db.session.commit()
 
-        print('*******', u.id)
-        e=Event(title=form.title.data,description=form.description.data,organizer_id=u.id,venue_id=v.id,eventtype_id=form.eventtype.data,end_time=datetime1, start_time=datetime1)
+        print('*******', current_user.id)
+        e=Event(title=form.title.data,description=form.description.data,organizer_id=current_user.id,venue_id=v.id,eventtype_id=form.eventtype.data,end_time=datetime1, start_time=datetime1,img_link=form.imglink.data,event_owner=form.eventowner.data)
         
         db.session.add(e)
         db.session.commit()
-       
+        flash('Successfully added')
     return render_template('add_event.html',form=form)  
 
-@events_blueprint.route('/list',methods=['POST','GET'])
+@events_blueprint.route('/',methods=['POST','GET'])
 def list():
-    return render_template('events.html', events= Event.query.all())
+    events = Event.query.all()
+
+    return render_template('events.html', events = events, event_count=len(events))

@@ -88,10 +88,9 @@ size:20px!important;
   z-index: 20;
 }
 body{
-background: linear-gradient(to left, rgb(36, 1, 43), rgb(255, 175, 3)); 
-
-  /* background-color: rgba(19, 1, 1, 0.959);
-  background-repeat: no-repeat;
+background: rgb(255, 255, 255);
+/* background: linear-gradient(0deg, rgba(255,166,0,1) 0%, rgba(0,0,0,1) 52%, rgba(29,6,6,1) 100%);  /* background-color: rgba(19, 1, 1, 0.959); */
+  /* background-repeat: no-repeat; */
   /* background-image: url("covers.png"); */
   
   /* background-position: center center;
@@ -173,4 +172,60 @@ header.header-fixed {
 #submit{
   border:none!important;
   font-size: 20px;
+}
+.countdown {
+    padding: 18px 15px!important;
+    border-radius: 5px!important;
+    margin-top: -80px!important;
+    margin-left: 100px !important;
+    position: absolute!important;
+    overflow: hidden!important;
+    width: 100%!important;
+    background-color:rgba(204, 150, 0, 0.397);
+}
+
+.shadow {
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.15)!important;
+}
+.countdown:before {
+    position: absolute !important;
+    left: 0 !important;
+    top: 0 !important;
+  
+    background-size: cover !important;
+    width: 100% !important;
+    height: 100% !important;
+    content: "" !important;
+}
+.custom-select{
+  color: #dbd7d7!important;
+  background-color: #ffffff00!important;
+    border: 1px solid #ffb503!important;
+    border-radius: .25rem!important;
+}
+.top-space{
+  margin-top:100px!important;
+}
+.card{
+  height:100%;
+}
+.card-img-top{
+height:230px;
+}
+
+.box-count{
+  min-height: 100px !important;
+  
+  background-color: transparent!important;
+}
+.figure-number{
+  font-size:30px;
+}
+.bord-right{
+    border-right: 2px solid #ffb503!important;
+}
+.card{
+background-color: #fffefedc !important;
+    background-clip: border-box !important;
+    border: 1px solid #ffb503 !important;
 }

@@ -1,9 +1,43 @@
-{% extends "layout.html" %}
-{% block content %}
 
+{% include 'home.html' %}
+
+<div class="container">
+
+  <div class="row">
+    <div class="col-10">
+      <div class="countdown shadow clearfix">
+        <div class="card text-center ">
+<div class="row">
+    <div class="col-4  box-count bord-right mt-2">
+<h5>Total Events Created</h5>  
+<p class="figure-number">{{ event_count }}</p>  
+    </div>
+        <div class="col-4  box-count bord-right mt-2"><h5>Total Tickets Purchased</h5></div>
+            <div class="col-4  box-count mt-2"><h5>Total Sponsors</h5> </div>
+</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+<div class="row top-space">
 {% for e in events %}
-<div>{{e.id}}</div>
-{% endfor %}
+
+    <div class="col-4">
+<div class="card mb-3">
+    <img class="card-img-top" src="{{e.img_link}}" alt="Card image cap">
+    <div class="card-body">
+        <h5 class="card-title">{{ e.title}}</h5>
+        <p class="card-text">{{e.event_owner}}</p>
+        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+    </div>
+</div>
+</div>
 
 
-{% endblock %}
+ 
+
+  {% endfor %}
+</div>
+</div>

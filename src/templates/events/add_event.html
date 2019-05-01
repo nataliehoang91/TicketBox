@@ -1,118 +1,86 @@
-{% extends "layout.html" %} 
-{% block content %}
+{% extends "layout.html" %} {% block content %}
 {{ form.hidden_tag() }}
 <h3>Create Event</h3>
 <div class="add-event-bg">
   <form class="border-input" method="POST">
-      <div class="form-group ">
-        <h5>Title</h5>
-        <div class="input-wrapper my-2"> 
-                                    
-                    <div class="form-control spacing">
-    {{ form.title() }}
-                    </div>
-                    <label for="stuff" class="fas fa-pen input-icon"></label>
-                </div>
-                <h5>Description</h5>
-        <div class="input-wrapper my-2">
-          <div
-            class="form-control spacing">
-            
- {{ form.description() }}
-        </div>
-          <label for="stuff" class="fas fa-pen input-icon"></label>
-        </div>
-        <h5>Venue Name</h5>
-        <div class="input-wrapper my-2">
+    <div class="form-group ">
+      <h5>Title</h5>
+      <div class="input-wrapper my-2">
         <div class="form-control spacing">
-        
-    {{ form.venue() }}
+          {{ form.title() }}
         </div>
-          <label for="stuff" class="fas fa-building input-icon"></label>
-        </div>
-        <h5>Location</h5>
-        <div class="input-wrapper my-2">
+        <label for="stuff" class="fas fa-pen input-icon"></label>
+      </div>
+      <h5>Description</h5>
+      <div class="input-wrapper my-2">
         <div class="form-control spacing">
-        
-            {{ form.location() }}
+          {{ form.description() }}
         </div>
-          <label for="stuff" class="fas fa-map-marked-alt input-icon"></label>
+        <label for="stuff" class="fas fa-pen input-icon"></label>
+      </div>
+      <h5>Venue Name</h5>
+      <div class="input-wrapper my-2">
+        <div class="form-control spacing">
+          {{ form.venue() }}
         </div>
-        <div class="d-flex flex-row justify-content-between">
-    
+        <label for="stuff" class="fas fa-building input-icon"></label>
+      </div>
+      <h5>Location</h5>
+      <div class="input-wrapper my-2">
+        <div class="form-control spacing">
+          {{ form.location() }}
+        </div>
+        <label for="stuff" class="fas fa-map-marked-alt input-icon"></label>
+      </div>
+      <div class="d-flex flex-row justify-content-between">
         <div class="input-wrapper">
-                <h5>Start time</h5>
-            <div class="form-control spacing">
-                
-                <input id="date" type="date" value="2017-06-01">
-                <input type="time">
-            </div>
-            <label for="stuff" class="fas fa-calendar-week input-icon extra"></label>
+          <h5>Start time</h5>
+          <div class="form-control spacing">
+            <input id="date" type="date" value="2017-06-01" />
+            <input type="time" />
+          </div>
+          <label
+            for="stuff"
+            class="fas fa-calendar-week input-icon extra"
+          ></label>
         </div>
-       
-       
+
         <div class="input-wrapper">
-            <h5>End time</h5>
-            <div class="form-control spacing mb-3">
-                
-              <!-- <input type="text" name="input" placeholder="YYYY-MM-DD" required
+          <h5>End time</h5>
+          <div class="form-control spacing mb-3">
+            <!-- <input type="text" name="input" placeholder="YYYY-MM-DD" required
                 pattern="(?:19|20)[0-9]{2}-(?:(?:0[1-9]|1[0-2])/(?:0[1-9]|1[0-9]|2[0-9])|(?:(?!02)(?:0[1-9]|1[0-2])/(?:30))|(?:(?:0[13578]|1[02])-31))"
                 title="Enter a date in this format YYYY/MM/DD" /> -->
 
-
-                <input id="date" type="date" value="2017-06-01">
-
-            </div>
-            <label for="stuff" class="fas fa-calendar-week input-icon extra"></label>
+            <input id="date" type="date" value="2017-06-01" />
+          </div>
+          <label
+            for="stuff"
+            class="fas fa-calendar-week input-icon extra"
+          ></label>
         </div>
-        </div>
-        <div class="d-flex flex-row justify-content-between">
-
-<div class="input-wrapper">
-    <h5> Email</h5>
-
-<div class="form-control spacing">
-{{ form.email() }}
-</div>
-    <label for="stuff" class="fas fa-pen input-icon extra"></label>
-</div>
-
-<div class="input-wrapper">
-    <h5> Name</h5>
-    <div class="form-control spacing">
-        {{ form.name() }}
-    </div>
-    <label for="stuff" class="fas fa-pen input-icon extra"></label>
-</div>
-
-<div class="input-wrapper">
-    <h5> Phone number</h5>
-    <div class="form-control spacing">
-        {{ form.phonenumber }}
-    </div>
-    <label for="stuff" class="fas fa-pen input-icon extra"></label>
-</div>
-</div>
-Event Type
-<p>{{ form.eventtype() }}</p>
-
-
-
       </div>
-    {{ form.submit.label }} &#10140
-    {{ form.submit() }}
-    </form>
+      <div class="input-wrapper my-2">
+        <div class="form-control spacing">
+          {{ form.imglink() }}
+        </div>
+        <label for="stuff" class="fas fa-pen input-icon"></label>
+      </div>
+      <div class="input-wrapper my-2">
+        <div class="form-control spacing">
+          {{ form.eventowner() }}
+        </div>
+        <label for="stuff" class="fas fa-pen input-icon"></label>
+      </div>
 
-
-    
-
-    <div class="WTF">
-    {% for error in form.errors %}
-      <span class="text-white">{{ error }}</span>
-      {% endfor %}
+      <div class="d-flex flex-row justify-content-between"></div>
+      Event Type
+      <p>{{ form.eventtype() }}</p>
     </div>
-    
-  </div>
+
+    {{ form.submit() }}
+  </form>
+</div>
 
 {% endblock %}
 <!-- <button type="button" class="btn btn-primary"></button> -->

@@ -34,9 +34,9 @@ def add():
         print("username")
         db.session.add(u)
         db.session.commit()
-
+        flash("Your account has been successfully created")
         print('*******', u.id)
-        
+        return redirect('/')
     return render_template('signup.html',form=form)  
 
 
