@@ -229,3 +229,94 @@ background-color: #fffefedc !important;
     background-clip: border-box !important;
     border: 1px solid #ffb503 !important;
 }
+
+figure {
+	
+	width: 50px;
+	height: 57px;
+	
+	background-color: #fcfcf9;
+	border-radius: 10px;
+  margin-left:80%!important;
+  margin-top: 0% !important;
+    margin-bottom: 0%!important;
+  
+	position: relative;
+}
+	figure:before {
+		
+		display: block;
+		
+		width:128px;
+		height: 69px;
+		
+		border-radius: 10px 10px 0 0;
+		
+		
+
+	}
+	
+	.day-display {
+		width: 50px;
+		height: 20px;
+		
+		position: absolute;
+		top: -1px;
+		
+		background-color: #fa565a;
+		border-radius: 10px 10px 0 0;
+		border-bottom: 3px solid #e5e5e5;
+		
+		font: 400 10px/20px Arial, Helvetica, Geneva, sans-serif;
+		letter-spacing: 0.5px;
+		color: #fff;
+		
+		text-align: center;
+	}
+	
+	.date-display {
+		width: 53px;
+		height: 45px;
+		
+		position: absolute;
+		top: 28px;
+		
+		font: 400 19px/10px "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+		
+		color: #4c566b;
+		
+		text-align: center;
+		
+		z-index: 10;
+  }
+		.date-display:before {
+			
+			display: block;
+			
+			position: absolute;
+			top: 35px;
+						
+			width: 3px;
+			height: 10px;
+			
+			
+		}
+		
+  .date-display:after {
+			
+			display: block;
+			
+			position: absolute;
+			top: 35px;
+			right: 0;
+						
+			width: 3px;
+			height: 10px;
+			
+		}
+    
+.card-footer{
+  background-color:rgb(255, 177, 0)!important;
+}
+
+		
