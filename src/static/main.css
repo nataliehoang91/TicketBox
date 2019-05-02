@@ -71,7 +71,7 @@ border:solid rgb(0, 0, 2) 2px!important;
 }
 
 #submit{
-color:white!important;
+color:rgb(8, 8, 8)!important;
 background-color:transparent!important;
 size:20px!important;
 }
@@ -181,7 +181,7 @@ header.header-fixed {
     position: absolute!important;
     overflow: hidden!important;
     width: 100%!important;
-    background-color:rgba(204, 150, 0, 0.397);
+    background-color:rgba(204, 150, 0, 0.609);
 }
 
 .shadow {
@@ -225,7 +225,7 @@ height:230px;
     border-right: 2px solid #ffb503!important;
 }
 .card{
-background-color: #fffefedc !important;
+background-color: #faf6eff8 !important;
     background-clip: border-box !important;
     border: 1px solid #ffb503 !important;
 }
@@ -237,7 +237,7 @@ figure {
 	
 	background-color: #fcfcf9;
 	border-radius: 10px;
-  margin-left:80%!important;
+  margin-left:60%!important;
   margin-top: 0% !important;
     margin-bottom: 0%!important;
   
@@ -281,7 +281,7 @@ figure {
 		position: absolute;
 		top: 28px;
 		
-		font: 400 19px/10px "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+		font: 400 12px/10px "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
 		
 		color: #4c566b;
 		
@@ -320,3 +320,27 @@ figure {
 }
 
 		
+.description-text{
+  position: absolute!important;
+    bottom: 0px!important;
+    height: 0px!important;
+    width: 100%!important;
+    transition-duration: .7s;
+}
+.text-transition{
+  overflow: hidden!important;
+  position: relative;
+   
+    min-width: 0;
+    word-wrap: break-word;
+   
+    background-clip: initial;
+
+}
+
+.text-transition:hover  .description-text{
+  height: 230px!important;
+  right: 0;
+  background-color: rgba(17, 15, 15, 0.774)!important;
+  font-size: 15px!important;
+}

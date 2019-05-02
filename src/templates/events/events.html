@@ -20,30 +20,49 @@
     </div>
   </div>
 
-  <div class="row top-space">
+  <div class="row top-space ">
     {% for e in events %}
 
-    <div class="col-4">
+    <div class="col-4 mb-3">
       <div class="card mb-3">
-        <img class="card-img-top" src="{{ e.img_link }}" alt="Card image cap" />
+        <div class="text-transition">
+          <img
+            class="card-img-top"
+            src="{{ e.img_link }}"
+            alt="Card image cap"
+          />
+          <div class="position-relative">
+            <div class="description-text text-white">
+              Description: {{ e.description }}
+            </div>
+          </div>
+        </div>
         <div class="card-title ml-3 mt-2">
           <h5>{{ e.title }}</h5>
         </div>
         <div class="card-body">
-           <p> {{e.venue.venuename}}</p>
+          <p>{{ e.venue.venuename }}</p>
           <p class="card-text">Organizer: {{ e.event_owner }}</p>
           <p class="card-text">Event Type: {{ e.type.event_type }}</p>
         </div>
+       
         <div class="card-footer">
+            <div class="d-flex justify-content-between">
+                <div>
+            <p>{{ e.venue.locationaddress }}</p>
+            <button>TICKET</button>
+            </div>
           <figure>
             <div class="day-display">
-              FEB
+             2019
             </div>
             <div class="date-display">
-              22
+              FEB-2
             </div>
           </figure>
         </div>
+        </div>
+        
       </div>
     </div>
 
