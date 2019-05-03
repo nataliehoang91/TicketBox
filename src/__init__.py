@@ -3,6 +3,8 @@ from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
 import os
+from itsdangerous import URLSafeTimedSerializer
+
 
 app = Flask(__name__)
 POSTGRES = {
@@ -13,10 +15,16 @@ POSTGRES = {
    'port': os.environ['PSQL_PORT'],
 }
 
+
+
 app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://%(user)s:%(pw)s@%(host)s:\
 %(port)s/%(db)s' % POSTGRES
-app.secret_key = "hafha"
+app.config['SECRET_KEY'] = "abc"
 db = SQLAlchemy(app)
+
+
+
+
 
 from src.models.event import Event
 from src.models.user import User
@@ -35,6 +43,8 @@ from flask import session
 
 
 db.init_app(app)
+
+# token = ts.dumps(User.email, salt='recover-password-secret')
 
 login_manager = LoginManager()
 login_manager.login_view = 'auth.login'

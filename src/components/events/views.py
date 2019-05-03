@@ -21,7 +21,7 @@ from src.models.venue import Venue
 from src.models.type import Type
 from flask_login import UserMixin, LoginManager,login_user,logout_user, current_user, login_required
 from werkzeug.security import generate_password_hash, check_password_hash
-
+from src.components.account.form import LoginForm
 # @events_blueprint.route('/')
 
 # def hello():
@@ -58,6 +58,6 @@ def add():
 
 @events_blueprint.route('/',methods=['POST','GET'])
 def list():
+    form = LoginForm()
     events = Event.query.all()
-
-    return render_template('events.html', events = events, event_count=len(events))
+    return render_template('events.html',form=form, events = events, event_count=len(events))

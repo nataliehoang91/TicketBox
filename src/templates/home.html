@@ -79,7 +79,7 @@
                   <a class="nav-link" href="{{ url_for('events.list') }}">EVENTS</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ url_for('events.add') }}" class="btn-create font-weight-bold">
+                    <a class="nav-link btn-create font-weight-bold" href="{{ url_for('events.add') }}" >
                         CREATE EVENTS</a>
                 </li>
                 {% if current_user.is_authenticated %}
@@ -151,6 +151,10 @@
                             <a href="{{ url_for('account.add') }}">
                               "Sign Up here if you don't have account yet"
                             </a>
+                            
+                              <p><a href="{{ url_for('account.reset') }}">
+                                "Reset Password if forgot password"</a></p>
+                        
                             <div class="modal-footer text-center">
                               {{ form.submit() }}
                             </div>
@@ -236,3 +240,7 @@
 
 
 {% endblock %}
+
+
+
+
